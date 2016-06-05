@@ -1,15 +1,30 @@
 %% MNIST Image Loading Functions
+
 function [images,labels] = MNISTload(images_location,labels_location)
-%loads mnist data from train,t10k files, and with stanford code
+% MNISTLOAD loads images from MNIST files (.idx#-ubyte) into a dictionary
+% ========================================================================
+% INPUT ARGUMENTS:
+%   images_location       (string) location, file, of the MNIST image data
+%   labels_location       (string) location, file, of the MNIST label data
+% ========================================================================
+% OUTPUT: 
+%   images                (matrix) processed images in matrix form
+%   labels                (matrix) processed labels in matrix form
+% ========================================================================   
+
+%% Main 
+
 %load images
 images = loadMNISTImages(images_location);
+
 %load labels
 labels = loadMNISTLabels(labels_location);
+
 end
 
 function images = loadMNISTImages(filename)
-%loadMNISTImages returns a 28x28x[number of MNIST images] matrix containing
-%the raw MNIST images
+% LOADMNISTIMAGES converts the files of MNIST images into matrix form
+% ========================================================================  
 
 fp = fopen(filename, 'rb');
 assert(fp ~= -1, ['Could not open ', filename, '']);
@@ -35,8 +50,8 @@ images = double(images) / 255;
 end
 
 function labels = loadMNISTLabels(filename)
-%loadMNISTLabels returns a [number of MNIST images]x1 matrix containing
-%the labels for the MNIST images
+% LOADMNISTLABELS converts the files of MNIST labels into matrix form
+% ========================================================================  
 
 fp = fopen(filename, 'rb');
 assert(fp ~= -1, ['Could not open ', filename, '']);

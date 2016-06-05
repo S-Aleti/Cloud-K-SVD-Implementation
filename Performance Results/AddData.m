@@ -1,7 +1,24 @@
-%% Used for adding new data
-
 function [DataMatrix,DataSignal] = AddData(DataMatrix,DataSignal,Resolution,...
     Classes,Amount_per_class,Signals,tD,t0,tc,tp,run_time)
+% ADDDATA is used in main to transform the data collected into a matrix for
+% further analysis
+% ========================================================================
+% INPUT ARGUMENTS:
+%   DataMatrix           (matrix) six-dimensional, contains the following 
+%                                 data: 'Pixels','Amount','Signals','tD',
+%                                 'tc','tp','run_time'
+%   DataSignal           (matrix) reformatted DataMatrix in two dimensions
+%   Resolution           (matrix) contains height and width of images in
+%                                 pixels
+%   Classes              (matrix) list of classifications being analyzed
+%   Amount_per_class     (matrix) training samples used per class
+%   Signals              (scalar) total number of testing samples used
+%   tD                   (scalar) iterations of Cloud K-SVD
+%   t0                   (scalar) sparsity constraint used
+%   tc                   (scalar) iterations of the consensus algorithm
+%   tp                   (scalar) iterations of the power method
+% ========================================================================
+
 %% Formatting
 
 Pixels = Resolution(1)*Resolution(2);

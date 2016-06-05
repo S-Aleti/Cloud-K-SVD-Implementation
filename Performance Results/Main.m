@@ -1,3 +1,13 @@
+
+% ========================================================================
+% 
+% This script can be run to format and analyze the data collected from 
+% our implementation of Cloud K-SVD. It outputs a correlation matrix of 
+% each variable analyzed (see CollectData.m) and their effect on the 
+% algorithm's total runtime
+%
+% ========================================================================
+
 %% Initialize Data
 
 CollectData; %also included in AllSamples.mat
