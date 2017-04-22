@@ -57,6 +57,6 @@ This code requires each node to be on an ad-hoc network and able to keyless ssh 
 - Change the option variable in the code to debug data transmission, consensus, or the power method
 - By default, set to a fully connected 5 node network with little data
 
-##Performance Data & Analysis
+## Performance Data & Analysis
 
 The code to import and analyze the data obtained from our performance testing is available as MATLAB code in the *Performance Data* folder. THe programs add each data point measuring the run time for Cloud K-SVD on the MNIST dataset for 6 different variables: Resolution (data dimension), Samples per Class (5 classes), Signals, Iterations of Cloud K-SVD, Iterations of Consensus, and Iterations of the Power Method. Further details and results are discussed in the paper. Running `Main.m` will import all the data points into MATLAB and organize them into a 6-D Matrix and a set of signals. Each signal contains the 6 independent variables followed by the run time. 
